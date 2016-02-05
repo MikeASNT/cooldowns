@@ -1,0 +1,57 @@
+h2 {
+  margin-top: 0px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin-left: 2%;
+  margin-top: 2%;
+  padding: 5%;
+  background-color: #F4F5F6;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px black, 0 0 10px black;
+  vertical-align: top;
+}
+
+.slider {
+  width: 50%;
+  height: 16px;
+}
+
+.box {
+  width: 60px;
+  padding: 4px;
+  border: 1px solid black;
+  margin-left: 1%;
+}
+.calcBox {
+  width: 80px;
+  padding: 4px;
+  border: 1px solid black;
+  margin-left: 1%;
+}
+
+.btnZ {
+  background-color: #00B5EE;
+  width: 30px;
+  Height: 30px;
+  border-radius: 5px;
+}
+
+.champBox {
+  width: 54%;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.skillBox {
+  Width: 50px;
+  border-radius: 5px;
+}
+
+.body2 {
+  padding: 5%;
+  text-align: center;
+  float: center;
+  position: relative;
+}

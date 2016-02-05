@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Champion Spell Cooldown Calculator</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div>
+
+  <body class="container-fluid">
+    <h2 align='center'>Cooldown Reduction Calculator</h2>
+    <p>
+    </p>
+    <div class="row body2">
+      <div>
+        <input type="button" class="btnZ col-xs-1" id="lButton" onclick="leftButton()" value="<">
+        </button>
+      </div>
+      <div class="col-xs-6">
+        <input type="range" id="cdrSlide" oninput="updateTextInput(this.value), findChampStat(getElementById('championSelect').value)" onchange="updateTextInput(this.value),findChampStat(getElementById('championSelect').value) " name="ponts" min="0" max="4500" step="1" list="cdrPoints">
+      </div>
+      <div>
+        <datalist id="cdrPoints">
+          <option>0</option>
+          <option>500</option>
+          <option>1000</option>
+          <option>1500</option>
+          <option>2000</option>
+          <option>2500</option>
+          <option>3000</option>
+          <option>3500</option>
+          <option>4000</option>
+          <option>4500</option>
+        </datalist>
+      </div>
+      <div>
+        <input type="button" class="btnZ col-xs-8" id="rButton" onclick="rightButton()" value='>'>
+        </button>
+        <div>
+          <input type="Number" id="cdrBox" class="box col-xs-0" oninput="updateSlideInput(this.value), findChampStat(getElementById('championSelect').value)" value='2250'>
+          
+        </div>
+        <p class="row">
+          <input type="Button" id="calcBtn" class="calcBox col-xs-18" onclick="findChampStat(getElementById('championSelect').value)" value='Calculate'>
+    </p>
+        
+      </div>
+    </div>
+</div>
+</div>
+
+<div align="center">
+  <h3>Current Champion</h3>
+  <div>
+    <select id="championSelect" onchange="findChampStat(this.value)" class="champBox">
+  </div>
+  <option value=""></option>;
+  <option value="aatrox">Aatrox</option>;
+  <option value="ahri"> Ahri</option>;
+  <option value="akali"> Akali</option>;
+  <option value="alistar"> Alistar</option>;
+  <option value="amumu"> Amumu</option>;
+  <option value="anivia"> Anivia</option>;
+  <option value="annie"> Annie</option>;
+  <option value="ashe"> Ashe</option>;
+  <option value="azir"> Azir</option>;
+  <option value="bard">Bard</option>;
+  <option value="blitzcrank"> Blitzcrank</option>;
+  <option value="brand"> Brand</option>;
+  <option value="braum"> Braum</option>;
+  <option value="caitlyn">Caitlyn</option>;
+  <option value="cassiopeia"> Cassiopeia</option>;
+  <option value="cho'gath"> Cho'Gath</option>;
+  <option value="corki"> Corki</option>;
+  <option value="darius">Darius</option>;
+  <option value="diana"> Diana</option>;
+  <option value="dr. mundo"> Dr. Mundo</option>;
+  <option value="draven"> Draven</option>;
+  <option value="ekko">Ekko</option>;
+  <option value="elise human"> Elise Human</option>;
+  <option value="elise spider"> Elise Spider</option>;
+  <option value="evelynn"> Evelynn</option>;
+  <option value="ezreal"> Ezreal</option>;
+  <option value="fiddlesticks">Fiddlesticks</option>;
+  <option value="fiora"> Fiora</option>;
+  <option value="fizz"> Fizz</option>;
+  <option value="galio">Galio</option>;
+  <option value="gangplank"> Gangplank</option>;
+  <option value="garen"> Garen</option>;
+  <option value="gnar mini"> Gnar Mini</option>;
+  <option value="gnar mega"> Gnar Mega</option>;
+  <option value="gragas"> Gragas</option>;
+  <option value="graves"> Graves</option>;
+  <option value="hecarim">Hecarim</option>;
+  <option value="heimerdinger"> Heimerdinger</option>;
+  <option value="illaoi">Illaoi</option>;
+  <option value="irelia"> Irelia</option>;
+  <option value="janna">Janna</option>;
+  <option value="jarvan iv"> Jarvan IV</option>;
+  <option value="jax"> Jax</option>;
+  <option value="jayce hammer"> Jayce Hammer</option>;
+  <option value="jayce cannon"> Jayce Cannon</option>;
+  <option value="jhin"> Jhin</option>;
+  <option value="jinx"> Jinx</option>;
+  <option value="kalista">Kalista</option>;
+  <option value="karma"> Karma</option>;
+  <option value="karthus"> Karthus</option>;
+  <option value="kassadin"> Kassadin</option>;
+  <option value="katarina"> Katarina</option>;
+  <option value="kayle"> Kayle</option>;
+  <option value="kennen"> Kennen</option>;
+  <option value="kha'zix"> Kha'Zix</option>;
+  <option value="kindred"> Kindred</option>;
+  <option value="kog'maw"> Kog'Maw</option>;
+  <option value="leblanc">LeBlanc</option>;
+  <option value="lee sin"> Lee Sin</option>;
+  <option value="leona"> Leona</option>;
+  <option value="lissandra"> Lissandra</option>;
+  <option value="lucian"> Lucian</option>;
+  <option value="lulu"> Lulu</option>;
+  <option value="lux"> Lux</option>;
+  <option value="malphite">Malphite</option>;
+  <option value="malzahar"> Malzahar</option>;
+  <option value="maokai"> Maokai</option>;
+  <option value="master yi"> Master Yi</option>;
+  <option value="miss fortune"> Miss Fortune</option>;
+  <option value="mordekaiser"> Mordekaiser</option>;
+  <option value="morgana"> Morgana</option>;
+  <option value="nami">Nami</option>;
+  <option value="nasus"> Nasus</option>;
+  <option value="nautilus"> Nautilus</option>;
+  <option value="nidalee human"> Nidalee Human</option>;
+  <option value="nidalee cougar"> Nidalee Cougar</option>;
+  <option value="nocturne"> Nocturne</option>;
+  <option value="nunu"> Nunu</option>;
+  <option value="olaf">Olaf</option>;
+  <option value="orianna"> Orianna</option>;
+  <option value="pantheon">Pantheon</option>;
+  <option value="poppy"> Poppy</option>;
+  <option value="quinn">Quinn</option>;
+  <option value="rammus">Rammus</option>;
+  <option value="rek'sai unburrowed"> Rek'Sai Unburrowed</option>;
+  <option value="rek'sai burrowed"> Rek'Sai Burrowed</option>;
+  <option value="renekton"> Renekton</option>;
+  <option value="rengar"> Rengar</option>;
+  <option value="riven"> Riven</option>;
+  <option value="rumble"> Rumble</option>;
+  <option value="ryze"> Ryze</option>;
+  <option value="sejuani">Sejuani</option>;
+  <option value="shaco"> Shaco</option>;
+  <option value="shen"> Shen</option>;
+  <option value="shyvana"> Shyvana</option>;
+  <option value="singed"> Singed</option>;
+  <option value="sion"> Sion</option>;
+  <option value="sivir"> Sivir</option>;
+  <option value="skarner"> Skarner</option>;
+  <option value="sona"> Sona</option>;
+  <option value="soraka"> Soraka</option>;
+  <option value="swain"> Swain</option>;
+  <option value="syndra"> Syndra</option>;
+  <option value="tahm kench">Tahm Kench</option>;
+  <option value="talon"> Talon</option>;
+  <option value="taric"> Taric</option>;
+  <option value="teemo"> Teemo</option>;
+  <option value="thresh"> Thresh</option>;
+  <option value="tristana"> Tristana</option>;
+  <option value="trundle"> Trundle</option>;
+  <option value="tryndamere"> Tryndamere</option>;
+  <option value="twisted fate"> Twisted Fate</option>;
+  <option value="twitch"> Twitch</option>;
+  <option value="udyr">Udyr</option>;
+  <option value="urgot"> Urgot</option>;
+  <option value="varus">Varus</option>;
+  <option value="vayne"> Vayne</option>;
+  <option value="veigar"> Veigar</option>;
+  <option value="vel'koz"> Vel'Koz</option>;
+  <option value="vi"> Vi</option>;
+  <option value="viktor"> Viktor</option>;
+  <option value="vladimir"> Vladimir</option>;
+  <option value="volibear"> Volibear</option>;
+  <option value="warwick">Warwick</option>;
+  <option value="wukong"> Wukong</option>;
+  <option value="xerath">Xerath</option>;
+  <option value="xin zhao"> Xin Zhao</option>;
+  <option value="yasuo">Yasuo</option>;
+  <option value="yorick"> Yorick</option>;
+  <option value="zac">Zac</option>;
+  <option value="zed"> Zed</option>;
+  <option value="ziggs"> Ziggs</option>;
+  <option value="zilean"> Zilean</option>;
+  <option value="zyra"> Zyra</option>;
+  </select>
+</div>
+<p>
+</p>
+<div align="center">
+  <p>
+    Q1
+    <input type="text" class="skillBox" id="q1" readonly> W1
+    <input type="text" class="skillBox" id="w1" readonly> E1
+    <input type="text" class="skillBox" id="e1" readonly> R1
+    <input type="text" class="skillBox" id="r1" readonly>
+  </p>
+  <p>
+    Q2
+    <input type="text" class="skillBox" id="q2" readonly> W2
+    <input type="text" class="skillBox" id="w2" readonly> E2
+    <input type="text" class="skillBox" id="e2" readonly> R2
+    <input type="text" class="skillBox" id="r2" readonly>
+  </p>
+  <p>
+    Q3
+    <input type="text" class="skillBox" id="q3" readonly> W3
+    <input type="text" class="skillBox" id="w3" readonly> E3
+    <input type="text" class="skillBox" id="e3" readonly> R3
+    <input type="text" class="skillBox" id="r3" readonly>
+  </p>
+  <p>
+    Q4
+    <input type="text" class="skillBox" id="q4" readonly> W4
+    <input type="text" class="skillBox" id="w4" readonly> E4
+    <input type="text" class="skillBox" id="e4" readonly> R4
+    <input type="text" class="skillBox" id="r4" readonly>
+  </p>
+  <p>
+    Q5
+    <input type="text" class="skillBox" id="q5" readonly> W5
+    <input type="text" class="skillBox" id="w5" readonly> E5
+    <input type="text" class="skillBox" id="e5" readonly> R5
+    <input type="text" class="skillBox" id="r5" readonly>
+  </p>
+  <p>
+    Q6
+    <input type="text" class="skillBox" id="q6" readonly> W6
+    <input type="text" class="skillBox" id="w6" readonly> E6
+    <input type="text" class="skillBox" id="e6" readonly> R6
+    <input type="text" class="skillBox" id="r6" readonly>
+  </p>
+</div>
+</div>
+</body>
+</div>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
